@@ -12,9 +12,8 @@ public class PlayerMove : MonoBehaviour
 
     private float horizontalMovement;
 
-    private float runSpeed = 3.0f;
-    public float runFastSpeed;
-    public float runSlowSpeed;
+    private float runSpeed = 20.0f;
+    
     
     
     void Start()
@@ -35,8 +34,8 @@ public class PlayerMove : MonoBehaviour
         {
             GameManager.instance.gameOver = true;
         }
-        transform.forward = new Vector3(horizontalMovement, 0, Mathf.Abs(horizontalMovement) - 1);
-        if (Input.GetButtonDown("Fire1"))
+        
+        if (Input.GetButton("Fire1"))
         {
             _characterController.Move(new Vector3(horizontalMovement*runSpeed, 0, 0) * Time.deltaTime);
         }
