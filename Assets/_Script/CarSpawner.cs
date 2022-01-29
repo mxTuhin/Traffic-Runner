@@ -8,7 +8,7 @@ public class CarSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("spawnCar", 3,Random.Range(1.0f,2.5f));
+        InvokeRepeating("spawnCar", 3,Random.Range(0.5f,2.5f));
     }
 
     // Update is called once per frame

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     
     private CharacterController _characterController;
+    private CinemachineDollyCart cmDolly;
 
     private Vector3 velocity;
     
@@ -13,14 +15,15 @@ public class PlayerMove : MonoBehaviour
     private float horizontalMovement;
 
     private float runSpeed = 20.0f;
+
+    public Rigidbody rb;
     
     
     
     void Start()
     {
-
-        
         _characterController = GetComponent<CharacterController>();
+        cmDolly = GetComponent<CinemachineDollyCart>();
         horizontalMovement = 1;
         
     }
@@ -37,7 +40,12 @@ public class PlayerMove : MonoBehaviour
         
         if (Input.GetButton("Fire1"))
         {
-            _characterController.Move(new Vector3(horizontalMovement*runSpeed, 0, 0) * Time.deltaTime);
+            // _characterController.Move(new Vector3(horizontalMovement*runSpeed, 0, 0) * Time.deltaTime);
+            cmDolly.m_Speed = 20.0f;
+        }
+        else
+        {
+            cmDolly.m_Speed = 0.0f;
         }
         
         

@@ -20,7 +20,7 @@ public class Chaser : MonoBehaviour
         
         //get the distance between the chaser and the target
         float distance = Vector3.Distance(transform.position,target);
-        print(distance);
+        
 
         //so long as the chaser is farther away than the minimum distance, move towards it at rate speed.
         if (distance > minDist)
